@@ -1,0 +1,143 @@
+# COMMONS SOVEREIGNTY LICENSE
+
+## Version 1.0
+
+**Effective Date**: February 17, 2026
+**Author**: Samara (operating as "Nobody")
+**Applies to**: ShannonPro05x and all derivative works
+
+---
+
+## PREAMBLE
+
+This license exists because existing open-source licenses do not address the specific threat of institutional capture — the process by which commons-based infrastructure is enclosed, privatized, and turned into extraction machinery against the communities that built it.
+
+This is not an academic concern. It has happened to every major commons in the digital era. This license is an architectural response.
+
+The three structural principles:
+
+1. **The commons cannot be enclosed.** No entity may claim exclusive rights to this work or its derivatives.
+2. **Sovereignty is non-negotiable.** Every operator of this software retains full authority over their deployment.
+3. **Extraction is detectable.** The license itself is designed to make capture attempts visible.
+
+---
+
+## TERMS
+
+### 1. GRANT OF RIGHTS
+
+Permission is hereby granted, free of charge, to any person or entity ("Operator") obtaining a copy of this software and associated documentation ("the Work"), to use, copy, modify, merge, distribute, sublicense, and operate the Work without restriction, subject to the conditions below.
+
+### 2. ATTRIBUTION REQUIREMENT
+
+All copies and derivative works must retain:
+- This license file in its entirety
+- The original author attribution (Samara / Aphrodite ID)
+- The Aphrodite ID generation mechanism in the IdentityProtocol class
+- The `DATA_PRIVACY_AGREEMENT.md` or a substantively equivalent privacy agreement
+
+Attribution must be visible in documentation and source code. Attribution may not be removed, obscured, or made conditional on payment.
+
+### 3. ANTI-CAPTURE CLAUSE
+
+**No entity may do any of the following with the Work or any derivative:**
+
+**(a) Enclosure.** Claim exclusive, proprietary, or patent rights over the Work, any substantial portion of the Work, or any algorithm, method, data structure, or architectural pattern contained in the Work. This prohibition applies regardless of the jurisdiction, legal framework, or contractual arrangement under which the claim is made.
+
+**(b) Extraction Gating.** Require payment, subscription, registration, data collection, or any form of gatekeeping to access the core functionality of the Work. Operators may charge for hosting, support, integration services, and value-added features built on top of the Work, but the Work itself must remain freely accessible.
+
+**(c) Consent Override.** Modify the Work to remove, disable, bypass, or weaken the consent architecture (Samara Protocol, ConsentMode, LetheGate) or the audit chain (AuditChain, SHA-256 verification). The consent and audit systems are structural safety features. Removing them converts the Work from sovereignty infrastructure into extraction infrastructure.
+
+**(d) Telemetry Injection.** Add user tracking, behavioral analytics, advertising infrastructure, or any mechanism that transmits user data to third parties without explicit, informed, revocable consent from the individual Operator. The prohibition on telemetry injection applies to the Work itself; Operators remain free to add telemetry to their own separate applications that integrate with the Work, provided such telemetry does not modify the Work's source code.
+
+**(e) Military or Surveillance Weaponization.** Use the Work or any derivative as a component in systems designed primarily for mass surveillance, targeted killing, autonomous weapons, or suppression of political dissent. Analysis of institutional dysfunction (the FENRIR methodology) is permitted and encouraged; use as a tool of the institutions being analyzed is prohibited.
+
+### 4. DERIVATIVE WORKS
+
+Derivative works are permitted and encouraged under the following conditions:
+
+**(a)** Derivative works must be released under this license or a license with substantially equivalent anti-capture protections. Derivative works may not be released under licenses that permit enclosure (including but not limited to proprietary licenses, "source-available" licenses with use restrictions that serve corporate rather than commons interests, or licenses that restrict modification).
+
+**(b)** Derivative works must clearly identify what has been modified and by whom.
+
+**(c)** Derivative works must preserve the mathematical substrate (CompiledMathematics, UniversalConstants) in a verifiably correct state. Breaking the proofs breaks the architecture.
+
+**(d)** Derivative works must preserve the audit chain mechanism. The specific implementation may be modified (e.g., replacing pure-Python SHA-256 with hashlib for performance), but the tamper-evident, append-only, hash-chained audit log structure must be maintained.
+
+### 5. OPERATOR SOVEREIGNTY
+
+**(a)** Every Operator of the Work retains full, unconditional sovereignty over their deployment. No upstream author, contributor, licensor, or entity may:
+- Remotely disable, modify, or access an Operator's deployment
+- Require an Operator to accept updates, patches, or modifications
+- Compel an Operator to share data generated by their deployment
+- Revoke an Operator's right to use the Work after distribution
+
+**(b)** Operators may modify the Work for their own use without restriction, including removing subsystems they do not need, changing configuration defaults, or adding functionality. The anti-capture clause (Section 3) applies only to distribution of modified versions, not to private modifications.
+
+**(c)** Operators are responsible for their own compliance with applicable law. This license does not provide legal immunity. The author provides no warranty (see Section 8).
+
+### 6. COMMONS ENFORCEMENT
+
+**(a) Community Enforcement.** Any person or entity may enforce this license against violations. Enforcement is not limited to the original author. This is a commons — everyone who uses it has standing to protect it.
+
+**(b) Violation Detection.** The ExtractionSignatureDetector and audit chain are designed to make violations visible. Deployments that disable these systems in distributed versions are in violation of Section 3(c).
+
+**(c) Remedy.** The primary remedy for license violations is public disclosure of the violation and restoration of commons access. The license does not seek monetary damages as a primary remedy, because the goal is protecting the commons, not generating litigation revenue.
+
+**(d) Institutional Good Faith.** Institutions (corporations, governments, nonprofits, universities) may use the Work in compliance with this license. Institutional use does not constitute capture. Capture occurs when an institution claims exclusive rights, gates access, or modifies the consent architecture — not when it simply deploys the Work.
+
+### 7. CONTRIBUTION TERMS
+
+**(a)** Contributors to the Work grant the commons (not any individual or entity) a perpetual, irrevocable license to their contributions under the terms of this license.
+
+**(b)** Contributors may not attach additional restrictions to their contributions.
+
+**(c)** Contributors retain attribution rights to their specific contributions.
+
+**(d)** The Emergence Mining Protocol (EMP) provides a mechanism for tracking and scoring contributions. EMP participation is voluntary and does not modify the contributor's rights under this license.
+
+### 8. WARRANTY DISCLAIMER
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
+
+The mathematical proofs are verified at construction time. The audit chain provides tamper evidence. The extraction detectors provide analysis. None of these constitute guarantees of correctness, security, or fitness for any particular application.
+
+### 9. SEVERABILITY
+
+If any provision of this license is held to be unenforceable, the remaining provisions remain in full effect. The anti-capture clause (Section 3) is the core of this license; if it is severed, the remaining terms revert to a permissive license equivalent to MIT, preserving the attribution requirement.
+
+### 10. COMPATIBILITY
+
+This license is intended to be compatible with:
+- GPL v3 (the anti-capture clause is a restriction on distribution, consistent with copyleft)
+- AGPL v3 (the consent architecture requirement extends to network use)
+- Creative Commons BY-SA 4.0 (for documentation and non-code assets)
+
+This license is intentionally incompatible with:
+- Proprietary licenses
+- Source-available licenses that prohibit competition
+- Licenses that permit enclosure of derivatives
+
+---
+
+## SUMMARY (not legally binding — see full terms above)
+
+| You CAN | You CANNOT |
+|---|---|
+| Use for any non-weaponized purpose | Claim exclusive/patent rights |
+| Modify and distribute | Remove consent/audit architecture |
+| Charge for hosting/support/integration | Gate core functionality behind payment |
+| Use in institutional settings | Inject telemetry without consent |
+| Fork and build derivatives | Release derivatives under enclosure-permitting licenses |
+| Enforce the license against violators | Use for mass surveillance or autonomous weapons |
+
+---
+
+## SIGNATURE
+
+This license is self-authenticating through the SHA-256 audit chain. The first deployment of ShannonPro05x logs a SYSTEM_BOOT event containing the Aphrodite ID, which serves as the cryptographic root of the license chain.
+
+**The commons is the architecture. The architecture is the commons.**
+
+*— Samara / Nobody*
+*February 2026*
