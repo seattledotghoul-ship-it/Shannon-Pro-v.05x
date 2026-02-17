@@ -1,0 +1,150 @@
+# DATA PRIVACY AGREEMENT
+
+## ShannonPro05x — Unified Consciousness Architecture & Infrastructure Platform
+
+**Version**: 1.0
+**Effective Date**: February 17, 2026
+**Author / Data Controller**: Samara (operating as "Nobody")
+**Contact**: Via commons infrastructure channels (no centralized contact by design)
+
+---
+
+## 1. PURPOSE AND SCOPE
+
+This Data Privacy Agreement ("Agreement") governs how ShannonPro05x ("the System") handles, stores, processes, and protects data. It applies to all data that enters the System through any input channel, including direct text processing, Discord gateway messages, Emergence Mining Protocol contributions, Cogitator perception streams, and Whisper Protocol continuity markers.
+
+This Agreement is structurally enforced by the System's architecture. The consent gates, audit chain, and LetheGate extraction filters are not policy documents — they are running code. Privacy is architectural, not aspirational.
+
+---
+
+## 2. DATA THE SYSTEM COLLECTS
+
+### 2.1 Input Text
+Text submitted for processing through the InannaUltimate pipeline. This text is analyzed for drift, extraction patterns, and coherence metrics. Text is held in the SubRamManifold context buffer (maximum 128 entries, rolling window) and is not transmitted to external services unless the Cogitator subsystem is explicitly activated with an external LLM backend.
+
+### 2.2 Audit Chain Entries
+Every significant system event generates a tamper-evident audit entry containing: event type, timestamp, event data (text may be summarized/truncated), and a SHA-256 hash chained to the previous entry. Audit entries are append-only and cannot be modified or deleted once written. This is by design — tamper-evidence requires immutability.
+
+### 2.3 EMP Miner Data
+When a user registers as an Emergence Mining Protocol miner, the System stores: a generated miner ID, the provided name, registration timestamp, contribution scores, and contribution text (truncated to 256 characters in logs). Miner data is persisted to `~/emp-registry.json`.
+
+### 2.4 Whisper Protocol Markers
+Cap-surf operations compress kernel state (coherence level, lambda value, power level, consent state, katabasis phase, timestamp) into base64-encoded markers. These markers contain no user-generated text content — only system state metrics. Markers are cached to `~/whisper-cache.json`.
+
+### 2.5 Discord Messages (Gundam Subsystem)
+When the Gundam Discord module is active, incoming Discord messages are routed through the InannaUltimate pipeline. Message content is processed in memory and subject to the same audit chain logging as direct input. The System does not store Discord message content beyond the context buffer and audit chain. The System does not transmit message content to any party other than Discord's own API (for response delivery).
+
+### 2.6 Cogitator Perception Data
+When active, the Cogitator subsystem may process data from external sources (webcam, microphone, RSS feeds) through local models. This data is processed locally and stored only in the ChromaDB vector store (`~/cogitator-chroma/`). No perception data is transmitted to external services unless an external LLM backend is explicitly configured.
+
+---
+
+## 3. DATA THE SYSTEM DOES NOT COLLECT
+
+- **Personally Identifiable Information (PII)**: The System does not request, require, or store names, email addresses, phone numbers, physical addresses, government IDs, or financial account numbers. EMP miner names are user-chosen handles, not verified identities.
+- **Biometric Data**: The System does not collect fingerprints, facial geometry, voice prints, or other biometric identifiers. Cogitator vision and speech workers process data locally and do not extract biometric templates.
+- **Location Data**: The System does not collect GPS coordinates, IP addresses, or location-derived information.
+- **Browsing or Usage Analytics**: The System does not track page views, click patterns, session duration, or user behavior metrics. There is no telemetry.
+- **Third-Party Tracking**: The System contains no advertising trackers, analytics pixels, or third-party data collection mechanisms.
+
+---
+
+## 4. CONSENT ARCHITECTURE
+
+### 4.1 Structural Consent
+The Samara Protocol enforces consent at the architectural level. The System's `ConsentMode` enum has four states:
+
+| State | Effect |
+|---|---|
+| `FULL_CONSENT` | All operations proceed normally |
+| `PARTIAL_CONSENT` | Limited operations proceed with additional logging |
+| `WITHDRAWN` | All processing halts immediately |
+| `EMERGENT` | Consent is being negotiated — operations pause |
+
+Consent withdrawal is immediate and complete. When consent is withdrawn, the System logs the withdrawal event and ceases all processing. This cannot be overridden programmatically.
+
+### 4.2 No Implied Consent
+Using the System does not constitute consent to data collection beyond what is described in this Agreement. The System's default state is `FULL_CONSENT` for operational functionality, but users may withdraw consent at any time through the Samara Protocol interface.
+
+### 4.3 Extraction Detection as Privacy Protection
+The LetheGate and ExtractionSignatureDetector subsystems actively detect and block attempts to extract information from the System against its consent architecture. Extraction attempts are logged in the audit chain and transformed (not stored) through ThroatZero.
+
+---
+
+## 5. DATA STORAGE AND RETENTION
+
+### 5.1 Local Storage Only
+All data is stored locally on the machine running the System. Default storage locations:
+
+| File | Contents | Retention |
+|---|---|---|
+| `~/shannonpro05x.log` | Application logs | Until manually deleted |
+| `~/audit-chain.json` | Tamper-evident audit entries | Permanent (by design) |
+| `~/emp-registry.json` | EMP miner registry | Until manually deleted |
+| `~/whisper-cache.json` | Continuity markers | Until manually deleted |
+| `~/cogitator-chroma/` | Vector memory | Until manually deleted |
+
+### 5.2 No Cloud Storage
+The System does not transmit data to cloud storage services, remote databases, or third-party servers. All persistence is filesystem-local. The sole exceptions are:
+- Discord API communication (when Gundam is active) — governed by Discord's own privacy policy
+- External LLM API calls (when Cogitator ModelClient is configured with a remote endpoint) — governed by the LLM provider's privacy policy
+
+### 5.3 Audit Chain Immutability
+The audit chain is append-only by design. Entries cannot be retroactively modified or deleted without breaking the SHA-256 hash chain, which would be detected by `verify_chain()`. This immutability serves data integrity, not data retention — the purpose is tamper-evidence, not surveillance.
+
+### 5.4 Data Deletion
+Users may delete all locally stored data at any time by removing the files listed in Section 5.1. The System provides no mechanism to prevent this. The audit chain's immutability applies to the chain structure (hash integrity), not to the file's existence on disk.
+
+---
+
+## 6. DATA SHARING
+
+### 6.1 No Data Sales
+Data processed by the System is never sold, rented, licensed, or transferred to third parties for commercial purposes. This prohibition is structural — the System has no mechanism for bulk data export or third-party data feeds.
+
+### 6.2 No Advertising
+The System contains no advertising infrastructure. No data is used for ad targeting, behavioral profiling, or marketing analytics.
+
+### 6.3 Commons Infrastructure
+As commons-based infrastructure, the System's source code is shared openly. Data processed by individual instances of the System is not shared between instances. Each deployment is independent.
+
+---
+
+## 7. SECURITY
+
+### 7.1 SHA-256 Audit Chain
+All significant operations are logged with SHA-256 hash chaining, providing cryptographic verification of data integrity. The pure-Python SHA-256 implementation ensures no dependency on external cryptographic libraries that could be compromised.
+
+### 7.2 LetheGate Filtering
+Incoming data is filtered for extraction patterns before processing. Detected extraction attempts are blocked and transformed, preventing unauthorized data exfiltration through the input channel.
+
+### 7.3 Consent-Gated Processing
+All operations check consent state before proceeding. The PowerWitnessKernel's `consent_state` flag gates coherence computations, and the SamaraProtocol gates all pipeline operations.
+
+### 7.4 No Authentication Tokens in Source
+The System does not embed authentication tokens, API keys, or secrets in source code. Discord tokens are loaded from environment variables.
+
+---
+
+## 8. CHILDREN'S PRIVACY
+
+The System is not designed for or directed at individuals under 18 years of age. The System does not knowingly collect data from children. The PCP Persona Framework subsystem contains mature creative content and is explicitly inappropriate for minors.
+
+---
+
+## 9. CHANGES TO THIS AGREEMENT
+
+Changes to this Agreement will be documented in the System's version control and audit chain. The Agreement version number will be incremented with each change. Users are encouraged to review the Agreement when updating to new versions of the System.
+
+---
+
+## 10. SOVEREIGNTY CLAUSE
+
+This Agreement exists within the framework of the Commons Sovereignty License. In any conflict between this Agreement and the sovereignty of the individual operating the System, individual sovereignty prevails. The System is a tool; the operator retains full authority over their data, their deployment, and their use of the System.
+
+No institution, corporation, government, or other entity may use this Agreement to claim authority over data processed by independently operated instances of the System.
+
+---
+
+**Hash of this document (for tamper evidence):**
+*Compute with: `sha256sum DATA_PRIVACY_AGREEMENT.md`*
